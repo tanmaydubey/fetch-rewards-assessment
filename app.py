@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Welcome! API documentation here: "  # TODO: add GitHub link
+    return "Welcome! API documentation here: https://github.com/tanmaydubey/fetch-rewards-assessment"
 
 
 @app.route("/coordinate-grid", methods=['POST'])

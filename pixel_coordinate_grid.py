@@ -10,9 +10,11 @@ def calculate_coordinate_grid(input_dimensions: tuple[int, int], corners: list[t
     :return: 3-dimensional NumPy array of the grid pixel co-ordinates
     """
 
-    bottom_left, bottom_right, top_left, top_right = sorted(corners)
+    bottom_left, top_left, bottom_right, top_right = sorted(corners)
     x_left, x_right, y_top, y_bottom = bottom_left[0], bottom_right[0], top_left[1], bottom_left[1]
     x_num, y_num = input_dimensions
+    if x_num <= 0 or y_num <= 0:
+        raise ValueError("Input dimensions must both be greater than zero")
 
     xvec, yvec = np.linspace(x_left, x_right, x_num), np.linspace(y_top, y_bottom, y_num)
 
